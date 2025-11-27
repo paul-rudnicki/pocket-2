@@ -3,7 +3,7 @@ import {
   PAYMENT_STATUS,
   SUBSCRIPTION_BILLING_PERIOD,
   SUBSCRIPTION_CURRENCY,
-} from "@prisma/client";
+} from "../app/generated/prisma/client";
 import {
   addMonths,
   endOfMonth,
