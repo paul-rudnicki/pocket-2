@@ -1,5 +1,8 @@
 import type { Metadata } from "next"
 import "./globals.css"
+import {
+  ClerkProvider,
+} from '@clerk/nextjs'
 
 export const metadata: Metadata = {
     title: "Create Next App",
@@ -12,8 +15,12 @@ export default function RootLayout({
     children: React.ReactNode
 }>) {
     return (
-        <html lang="en">
-            <body>{children}</body>
-        </html>
+        <ClerkProvider publishableKey={process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY}>
+            <html lang="en">
+                <body>
+                    {children}
+                </body>
+            </html>
+        </ClerkProvider>
     )
 }
